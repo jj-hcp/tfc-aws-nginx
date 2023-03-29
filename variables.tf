@@ -1,3 +1,16 @@
+variable "AWS_ACCESS_KEY_ID" {
+  description = "The AWS access key"
+}
+
+variable "AWS_SECRET_ACCESS_KEY" {
+  description = "The AWS secret key"
+}
+
+variable "aws_region" {
+  description = "The AWS region to deploy the infrastructure in"
+  default     = "us-west-2"
+}
+
 variable "aws_region" {
   description = "The AWS region to deploy the infrastructure in"
   default     = "us-west-2"
