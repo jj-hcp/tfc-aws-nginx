@@ -11,11 +11,6 @@ variable "aws_region" {
   default     = "us-west-2"
 }
 
-variable "aws_region" {
-  description = "The AWS region to deploy the infrastructure in"
-  default     = "us-west-2"
-}
-
 variable "project_name" {
   description = "The project name to use for naming resources"
   default     = "nginx-project"
