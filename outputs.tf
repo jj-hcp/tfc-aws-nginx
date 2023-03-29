@@ -28,7 +28,7 @@ output "instance_availability_zone" {
   description = "The availability zone of the EC2 instance"
 }
 
-output "key_pair_name" {
-  value       = aws_key_pair.auth.key_name
-  description = "The name of the key pair used for the EC2 instance"
-}
+# output "key_pair_name" {
+#   value       = aws_key_pair.auth.key_name
+#   description = "The name of the key pair used for the EC2 instance"
+# }

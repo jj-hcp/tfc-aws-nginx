@@ -65,7 +65,7 @@ resource "aws_security_group" "allow_web" {
 resource "aws_instance" "nginx" {
   ami           = var.ubuntu_ami_id
   instance_type = var.instance_type
-  key_name      = aws_key_pair.auth.id
+#   key_name      = aws_key_pair.auth.id
   subnet_id     = aws_subnet.main.id
 
   vpc_security_group_ids = [aws_security_group.allow_web.id]
