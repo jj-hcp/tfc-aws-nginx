@@ -83,10 +83,10 @@ resource "aws_instance" "nginx" {
   }
 }
 
-resource "aws_key_pair" "auth" {
-  key_name   = "${var.project_name}-key"
-  public_key = file(var.public_key_path)
-}
+# resource "aws_key_pair" "auth" {
+#   key_name   = "${var.project_name}-key"
+#   public_key = file(var.public_key_path)
+# }
 
 resource "aws_eip" "nginx_eip" {
   instance = aws_instance.nginx.id
