@@ -38,7 +38,7 @@ variable "instance_type" {
 
 variable "ubuntu_ami_id" {
   description = "The AMI ID for the Ubuntu 20.04 LTS image"
-  default     = "ami-0e47b60aa55d377ca" # This is for the us-west-2 region. Please update this value if you use a different region.
+  default     = "ami-0b3b93a68ea39bbb5"
 }
 
 variable "public_key_path" {

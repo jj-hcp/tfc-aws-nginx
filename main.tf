@@ -97,13 +97,13 @@ resource "aws_instance" "nginx" {
 
   vpc_security_group_ids = [aws_security_group.allow_web.id]
 
-  user_data = <<-EOF
-              #!/bin/bash
-              sudo apt-get update
-              sudo apt-get install -y nginx
-              sudo systemctl start nginx
-              sudo systemctl enable nginx
-              EOF
+#   user_data = <<-EOF
+#               #!/bin/bash
+#               sudo apt-get update
+#               sudo apt-get install -y nginx
+#               sudo systemctl start nginx
+#               sudo systemctl enable nginx
+#               EOF
 
   tags = {
     Name = "${var.project_name}-nginx"
