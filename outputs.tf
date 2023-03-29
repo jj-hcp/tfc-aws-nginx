@@ -29,7 +29,7 @@ output "instance_availability_zone" {
 }
 
 output "aws_eip" {
-  value = aws.eip.nginx_eip.public_ip
+  value = aws.nginx_eip.public_ip
 }
 
 # output "key_pair_name" {
