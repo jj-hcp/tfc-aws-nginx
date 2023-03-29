@@ -33,7 +33,7 @@ variable "availability_zone" {
 
 variable "instance_type" {
   description = "The EC2 instance type for the Nginx server"
-  default     = "t2.micro"
+  default     = "t2.nano"
 }
 
 variable "ubuntu_ami_id" {
