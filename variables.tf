@@ -8,7 +8,7 @@ variable "TF_VAR_AWS_SECRET_ACCESS_KEY" {
 
 variable "aws_region" {
   description = "The AWS region to deploy the infrastructure in"
-  default     = "us-west-2"
+  default     = "us-east-1"
 }
 
 variable "project_name" {
@@ -28,7 +28,7 @@ variable "subnet_cidr_block" {
 
 variable "availability_zone" {
   description = "The availability zone for the subnet"
-  default     = "us-west-2a"
+  default     = "us-east-1a"
 }
 
 variable "instance_type" {
@@ -38,7 +38,7 @@ variable "instance_type" {
 
 variable "ubuntu_ami_id" {
   description = "The AMI ID for the Ubuntu 20.04 LTS image"
-  default     = "ami-0c55b159cbfafe1f0" # This is for the us-west-2 region. Please update this value if you use a different region.
+  default     = "ami-0e47b60aa55d377ca" # This is for the us-west-2 region. Please update this value if you use a different region.
 }
 
 variable "public_key_path" {
