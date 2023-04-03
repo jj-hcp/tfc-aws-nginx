@@ -6,6 +6,10 @@ variable "TF_VAR_AWS_SECRET_ACCESS_KEY" {
   description = "The AWS secret key"
 }
 
+variable "cloudflare_api_token" {
+  description = "The CloudFlare api token"
+}
+
 variable "aws_region" {
   description = "The AWS region to deploy the infrastructure in"
   default     = "us-east-1"
@@ -34,6 +38,7 @@ variable "availability_zone" {
 variable "instance_type" {
   description = "The EC2 instance type for the Nginx server"
   default     = "t2.nano"
+  #default     = "t2.nano"
 }
 
 variable "ubuntu_ami_id" {

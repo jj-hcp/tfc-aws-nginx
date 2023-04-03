@@ -4,6 +4,10 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 3.0"
     }
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 3.0"
+    }
   }
 }
 
@@ -11,6 +15,10 @@ provider "aws" {
   region = var.aws_region
   access_key              = var.TF_VAR_AWS_ACCESS_KEY_ID
   secret_key              = var.TF_VAR_AWS_SECRET_ACCESS_KEY
+}
+
+provider "cloudflare" {
+  api_token = var.cloudflare_api_token
 }
 
 resource "aws_vpc" "main" {
@@ -112,4 +120,12 @@ resource "aws_eip" "nginx_eip" {
 resource "aws_eip_association" "nginx_eip_association" {
   instance_id   = aws_instance.nginx.id
   allocation_id = aws_eip.nginx_eip.id
+}
+
+resource "cloudflare_record" "christmas_app_dns_record" {
+  zone_id = "584385595625440eab46794a4e5c3326"
+  name    = "christmas.flctx.com"
+  value   = aws_eip.nginx_eip.public_ip
+  type    = "A"
+  ttl     = 3600
 }
