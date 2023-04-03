@@ -33,12 +33,12 @@ variable "availability_zone" {
 
 variable "instance_type" {
   description = "The EC2 instance type for the Nginx server"
-  default     = "t2.small"
+  default     = "t2.nano"
 }
 
 variable "ubuntu_ami_id" {
   description = "The AMI ID for the Ubuntu 20.04 LTS image"
-  default     = "ami-0b3b93a68ea39bbb5"
+  default     = "ami-0b3b93a68ea39bbb5" #ChristmasCheckerApp
 }
 
 variable "public_key_path" {

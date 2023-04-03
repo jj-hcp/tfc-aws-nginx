@@ -92,28 +92,14 @@ resource "aws_security_group" "allow_web" {
 resource "aws_instance" "nginx" {
   ami           = var.ubuntu_ami_id
   instance_type = var.instance_type
-#   key_name      = aws_key_pair.auth.id
   subnet_id     = aws_subnet.main.id
 
   vpc_security_group_ids = [aws_security_group.allow_web.id]
-
-#   user_data = <<-EOF
-#               #!/bin/bash
-#               sudo apt-get update
-#               sudo apt-get install -y nginx
-#               sudo systemctl start nginx
-#               sudo systemctl enable nginx
-#               EOF
 
   tags = {
     Name = "${var.project_name}-nginx"
   }
 }
-
-# resource "aws_key_pair" "auth" {
-#   key_name   = "${var.project_name}-key"
-#   public_key = file(var.public_key_path)
-# }
 
 resource "aws_eip" "nginx_eip" {
   instance = aws_instance.nginx.id
