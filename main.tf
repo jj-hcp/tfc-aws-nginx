@@ -127,5 +127,5 @@ resource "cloudflare_record" "christmas_app_dns_record" {
   name    = "christmas.flctx.com"
   value   = aws_eip.nginx_eip.public_ip
   type    = "A"
-  ttl     = 3600
+  ttl     = 60
 }
