@@ -116,7 +116,7 @@ resource "aws_eip" "nginx_eip" {
     Name = "${var.project_name}-eip"
   }
 }
-
+#comment
 resource "aws_eip_association" "nginx_eip_association" {
   instance_id   = aws_instance.nginx.id
   allocation_id = aws_eip.nginx_eip.id
